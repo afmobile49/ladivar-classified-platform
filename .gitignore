@@ -1,0 +1,30 @@
+# Runtime data
+/data.sqlite
+/data/*.sqlite
+*.sqlite-journal
+/tmp_sessions/
+
+# User uploads
+/uploads/*
+!/uploads/.htaccess
+!/uploads/.gitkeep
+!/uploads/ads/
+/uploads/ads/*
+!/uploads/ads/.gitkeep
+
+# Logs
+error_log
+*.log
+/admin/error_log
+/inc/error_log
+
+# Environment / local config
+/.env
+/.env.*
+/inc/config.local.php
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

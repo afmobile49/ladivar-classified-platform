@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteBase /ladivar/
+
+# صفحه اصلی پوشه
+DirectoryIndex index.php
+Options -Indexes
+
+# اگر فایل/پوشه واقعی وجود دارد، دست نزن
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Routes
+RewriteRule ^api/v1/?$ api/v1/index.php [L,QSA]
+RewriteRule ^api/v1/(.*)$ api/v1/index.php [L,QSA]
+
+RewriteRule ^$ index.php [L]
+RewriteRule ^cat/([^/]+)/?$ category.php?c=$1 [L,QSA]
+RewriteRule ^ad/([0-9]+)/?$ listing.php?id=$1 [L,QSA]
+RewriteRule ^post/?$ post.php [L]
+RewriteRule ^help/?$ help.php [L]
+RewriteRule ^about/?$ about.php [L]
+RewriteRule ^settings/?$ settings.php [L]
+RewriteRule ^admin/?$ admin/dashboard.php [L]
